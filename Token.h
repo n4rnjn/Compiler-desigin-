@@ -1,20 +1,23 @@
-#pragma once
+// Token.h
 
-// Token definitions for the lexical analyzer
+#ifndef TOKEN_H
+#define TOKEN_H
+
+#include <string>
 
 enum class TokenType {
     IDENTIFIER,
     KEYWORD,
-    NUMBER,
-    STRING,
+    LITERAL,
     OPERATOR,
-    DELIMITER,
+    PUNCTUATION,
     END_OF_FILE
 };
 
 struct Token {
     TokenType type;
-    std::string value;
+    std::string lexeme;
     int line;
-    int column;
 };
+
+#endif // TOKEN_H
